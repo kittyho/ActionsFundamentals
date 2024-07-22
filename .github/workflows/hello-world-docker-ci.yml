@@ -3,10 +3,11 @@ on:
   push:
     branches:
       - main
-  workflow_dispatch: 
+    paths: [ hello-world-docker-action/** ]  
+  workflow_dispatch:
 
 jobs:
-  build:
+  test-hello-world:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
@@ -14,6 +15,8 @@ jobs:
 
     - name: Run local action
       uses: ./hello-world-docker-action
+      with:
+          who-to-greet: 'kitty'
 
     - name: Output
-      run: echo "The time was ${{ steps.hello-action.outputs.time }} when the action said hello"
+      run: echo "The time was ${{ steps.test-hello-world.outputs.time }} when the action said hello"
