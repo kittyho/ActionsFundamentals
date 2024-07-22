@@ -1,9 +1,9 @@
 name: Run container action
-on: [push]
-workflow_dispatch: {} 
- push:
+on: 
+  push:
     branches:
       - main
+  workflow_dispatch: 
 
 jobs:
   build:
@@ -11,4 +11,4 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Run local action
-      uses: ./.github/actions/hello-world-docker-action/action.yml
+      uses: ./hello-world-docker-action/action.yml
