@@ -14,9 +14,10 @@ jobs:
       uses: actions/checkout@v3
 
     - name: Run local action
+      id: test-action
       uses: ./hello-world-docker-action
       with:
           who-to-greet: 'kitty'
 
     - name: Output
-      run: echo "The time was ${{ steps.test-hello-world.outputs.time }} when the action said hello"
+      run: echo "The time was ${{ steps.test-action.outputs.time }} when the action said hello"
