@@ -1,4 +1,4 @@
-name: Example Workflow
+name: Container Workflow
 
 on:
   workflow_dispatch:
