@@ -11,4 +11,4 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Run local action
-      uses: ./hello-world-docker-action/action.yml
+      uses: ./.github/actions/hello-world-docker-action/
