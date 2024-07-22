@@ -1,9 +1,9 @@
 name: Run container action
-on: [push]
-workflow_dispatch: {} 
- push:
+on: 
+  push:
     branches:
       - main
+  workflow_dispatch: 
 
 jobs:
   build:
