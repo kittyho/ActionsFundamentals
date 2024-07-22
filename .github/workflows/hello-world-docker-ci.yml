@@ -1,0 +1,14 @@
+name: Run container action
+on: [push]
+workflow_dispatch: {} 
+ push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Run local action
+      uses: ./.github/actions/hello-world-docker-action/action.yml
