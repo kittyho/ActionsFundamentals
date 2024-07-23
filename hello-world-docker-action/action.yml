@@ -1,18 +1,18 @@
-name: Container Workflow
-
+name: Container Workflow test
+# Define your inputs here.
+inputs:
+  who-to-greet:
+    description: 'Who to greet'
+    required: true
+    default: 'World'
 on:
   workflow_dispatch:
-  # Define your inputs here.
-  inputs:
-    who-to-greet:
-      description: Who to greet
-      required: true
-      default: World
+
   
   # Define your outputs here.
   outputs:
     time:
-      description: The time we greeted you
+      description: 'The time we greeted you'
   
   runs:
     using: docker
