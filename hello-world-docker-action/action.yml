@@ -17,5 +17,5 @@ on:
   runs:
     using: docker
     image: Dockerfile
-    env:
-      INPUT_WHO_TO_GREET: ${{ inputs.who-to-greet }}
+    arg:
+      - ${{ inputs.who-to-greet }}
